@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webcam Background Replacement</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <div id="app">
+        <h1>Background Replacement</h1>
+        <div class="video-container">
+            <!-- Updated video element with muted attribute -->
+            <video id="webcam" autoplay playsinline muted width="640" height="480"></video>
+            <canvas id="output"></canvas>
+        </div>
+        <div class="controls">
+            <button id="startBtn">Start Camera</button>
+            <button id="stopBtn" disabled>Stop Camera</button>
+            <div class="background-options">
+                <label>Background Type:</label>
+                <select id="bgType">
+                    <option value="color">Solid Color</option>
+                    <option value="image">Custom Image</option>
+                </select>
+                <input type="color" id="bgColor" value="#00ff00">
+                <input type="file" id="bgImage" accept="image/*" style="display: none;">
+            </div>
+        </div>
+    </div>
+    
+    <!-- Load libraries synchronously -->
+    <script src="https://docs.opencv.org/4.7.0/opencv.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/body-pix"></script>
+    <!-- Add face detection model -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/face-landmarks-detection"></script>
+    
+    <!-- Load application scripts -->
+    <script type="module" src="scripts/faceTracker.js"></script>
+    <script type="module" src="scripts/faceDetector.js"></script>
+    <script type="module" src="scripts/webcam.js"></script>
+    <script type="module" src="scripts/backgroundReplacer.js"></script>
+    <script type="module" src="scripts/app.js"></script>
+</body>
+</html>

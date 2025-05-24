@@ -1,0 +1,23 @@
+{
+  "name": "webcam-background-app",
+  "version": "1.0.0",
+  "description": "A webcam video background replacement application using HTML and JavaScript.",
+  "main": "backend/server.js",
+  "scripts": {
+    "start": "node backend/server.js",
+    "test": "echo \"No tests specified\" && exit 0"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {},
+  "keywords": [
+    "webcam",
+    "background",
+    "replacement",
+    "video",
+    "javascript"
+  ],
+  "author": "Your Name",
+  "license": "ISC"
+}
